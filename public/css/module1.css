@@ -1,0 +1,93 @@
+body {
+    font-size: 20px;
+    font-family: 'Poppins';
+    background: linear-gradient(to right, #23074d, #cc5333);
+    margin-bottom: 30px;
+    color: white;
+    margin: 0px;
+}
+
+/* .navbar */
+.module1 .navbar {
+    background-color: #272d40;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease;
+}
+
+.module1 .navbar h1 {
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.module1 .navbar a {
+    text-decoration: none;
+}
+
+.module1 .navbar.active {
+    background-color: white;
+    color: black;
+    position: fixed;
+}
+
+.module1 .navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.module1 .navbar ul li a {
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+/* .container */
+.module1 .container i {
+    color: black;
+
+}
+
+.module1 .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+/* .pic */
+.module1 .pic img {
+    width: 100%;
+    background-position: cover;
+}
+
+.module1 .pic .better {
+    position: absolute;
+    top: 33%;
+    left: 39%;
+
+}
+
+.module1 .pic .better h2 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.module1 .pic .better .right {
+    margin-left: 109px;
+}
+
+.module1 .pic a {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+    position: absolute;
+    left: 24%;
+}

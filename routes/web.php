@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryProduct;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,7 @@ Route::get('dashboard', [AdminController::class, 'show_dashboard'])->name('admin
 Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
 Route::post('admin-dashboard', [AdminController::class, 'dashboard'])->name('admin.layout');
 
-
+//Category
+Route::get('add-category-product', [CategoryProduct::class, 'add_category_product'])->name('admin.add_category');
+Route::get('all-category-product', [CategoryProduct::class, 'all_category_product'])->name('admin.all_category');
+Route::post('save-category-product', [CategoryProduct::class, 'save_category_product'])->name('admin.save_category');

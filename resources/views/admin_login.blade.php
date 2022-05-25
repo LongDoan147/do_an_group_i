@@ -35,10 +35,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="w3layouts-main">
             <h2>Đăng Nhập</h2>
             <?php
+
             use Illuminate\Support\Facades\Session;
+
             $messgae =  Session::get('message');
             if ($messgae) {
-                echo '<span class="text-alert">' . $messgae . '</span>';
+                echo '<span style="margin-left: 34%;text-align: center;color: red;">' . $messgae . '</span>';
                 Session::put('message', null);
             }
             ?>

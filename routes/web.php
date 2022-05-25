@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,11 @@ Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout')
 Route::middleware('checklogin')->group(function(){
     Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 });
+
+//Admin
+Route::get('admin', [AdminController::class, 'index'])->name('admin_login');
+Route::get('dashboard', [AdminController::class, 'show_dashboard'])->name('admin_layout');
+Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
+Route::post('admin-dashboard', [AdminController::class, 'dashboard'])->name('admin.layout');
+
+

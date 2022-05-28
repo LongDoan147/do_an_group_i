@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,10 @@ Route::post('admin-dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('add-category-product', [CategoryProduct::class, 'add_category_product'])->name('admin.add_category');
 Route::get('all-category-product', [CategoryProduct::class, 'all_category_product'])->name('admin.all_category');
 Route::post('save-category-product', [CategoryProduct::class, 'save_category_product'])->name('admin.save_category');
+
+//Product
+Route::get('add-product', [ProductController::class, 'add_product'])->name('admin.add_product');
+Route::get('all-product', [ProductController::class, 'all_product'])->name('admin.all_product');
+Route::post('save-product', [ProductController::class, 'save_product'])->name('admin.save_product');
+
+

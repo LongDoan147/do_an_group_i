@@ -1,0 +1,51 @@
+
+.module8 .container .boo a{
+    text-decoration: none;
+    color: #767676;
+    margin-bottom: 5px;
+}
+.module8 .container .boo {
+    margin-bottom: 5px;
+}
+.module8 .container h1 {
+    font-size: 28px;
+    margin: 0 0 13px;
+}
+.module8 .container .pri {
+    margin: 0 0 20px;
+}
+
+.module8 .container .price{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 16px;
+    display: inline-block;
+}
+.module8 .container .stock{
+    display: inline-block;
+}
+.module8 .container .desi{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.module8 .container .desi p{
+
+    margin: 0 0 10px;
+}
+.module8 .container .add {
+    margin-bottom: 15px;
+}
+.module8 .container .add button {
+    margin-right: 20px;
+    font-size: 20px;
+    padding: 15px 40px;
+}
+.module8 .container .wish button {
+    margin-right: 20px;
+    font-size: 20px;
+    padding: 15px 40px;
+}
+.module8 .container .cate {
+    margin-right: 15px;
+}

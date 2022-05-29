@@ -11,6 +11,11 @@ session_start();
 
 class ProductController extends Controller
 {
+
+    public function detail_product(){
+        return view('detail_product');
+    }
+
     public function add_product(){
         $cate_product = DB::table('tbl_category')->orderby('category_id', 'desc')->get();
         return view('admin.add_product')->with('cate_product', $cate_product);

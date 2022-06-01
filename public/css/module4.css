@@ -1,0 +1,44 @@
+.module4 {
+    text-align: center;
+    background-color: #f5f5f5;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 50px;
+}
+
+.module4 .top {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.module4 .bottom {
+
+    margin: 0px 310px;
+    background-color: #ffffff;
+}
+
+.module4 .bottom .col-md-7 {
+    text-align: left;
+}
+
+.module4 .bottom .men {
+    padding: 10px;
+}
+
+.module4 .bottom .des {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.module4 .bottom .size {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.module4 .bottom .pt-5 {
+    margin-top: 70px;
+}
+
+.module4 .bottom .add {
+    padding: 7px 31px;
+}

@@ -41,5 +41,7 @@ Route::post('save-category-product', [CategoryProduct::class, 'save_category_pro
 Route::get('add-product', [ProductController::class, 'add_product'])->name('admin.add_product');
 Route::get('all-product', [ProductController::class, 'all_product'])->name('admin.all_product');
 Route::post('save-product', [ProductController::class, 'save_product'])->name('admin.save_product');
+Route::get('/unactive-product/{product_id}', [ProductController::class, 'unactive_product']);
+Route::get('/active-product/{product_id}', [ProductController::class, 'active_product']);
 
 

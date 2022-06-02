@@ -74,7 +74,7 @@
                             </span>
                         </td>
                         <td>
-                            <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                            <a href="{{ route('product.update',['id' => $all_products->product_id])}}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
                         </td>
                     </tr>
                     @endforeach

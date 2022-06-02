@@ -43,5 +43,12 @@ Route::get('all-product', [ProductController::class, 'all_product'])->name('admi
 Route::post('save-product', [ProductController::class, 'save_product'])->name('admin.save_product');
 Route::get('/unactive-product/{product_id}', [ProductController::class, 'unactive_product']);
 Route::get('/active-product/{product_id}', [ProductController::class, 'active_product']);
+Route::get('/update/{id}',[
+    'as' => 'product.update',
+    'uses'=> 'ProductController@update'
+]);
 
-
+Route::post('/update/{id}',[
+    'as' => 'product.update_end',
+    'uses'=> 'ProductController@update_end'
+]);

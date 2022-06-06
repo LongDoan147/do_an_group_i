@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th5 28, 2022 lúc 05:29 AM
+-- Thời gian đã tạo: Th6 06, 2022 lúc 08:18 AM
 -- Phiên bản máy phục vụ: 5.7.36
 -- Phiên bản PHP: 7.4.26
 
@@ -137,8 +137,8 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
   `category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `category_status` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -147,9 +147,9 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_desc`, `category_status`, `created_at`, `updated_at`) VALUES
-(1, 'Kính', 'Kính thời trang hiện đại', 0, NULL, NULL),
-(2, 'Giày', 'Giày hiện đại', 1, NULL, NULL),
-(3, 'Mũ', 'Mũ tai bèo phong cách hiện đại', 1, NULL, NULL);
+(1, 'Kính', 'Kính thời trang hiện đại', 0, '2022-06-06 08:00:55', '2022-06-06 08:01:17'),
+(2, 'Giày', 'Giày hiện đại', 1, '2022-06-06 08:00:55', '2022-06-06 08:01:17'),
+(3, 'Mũ', 'Mũ tai bèo phong cách hiện đại', 1, '2022-06-06 08:00:55', '2022-06-06 08:01:17');
 
 -- --------------------------------------------------------
 
@@ -170,17 +170,17 @@ CREATE TABLE IF NOT EXISTS `tbl_product` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
 INSERT INTO `tbl_product` (`product_id`, `product_name`, `category_id`, `product_desc`, `product_content`, `product_price`, `product_image`, `product_status`, `created_at`, `updated_at`) VALUES
-(2, 'Dora 6219-C3', 1, 'Thương hiệu mắt kính Dora đến từ Việt Nam.', 'Mắt kính thời trang Nữ Dora 6219-C3 thiết kế kính kiểu hình tròn, gọng kính được làm bằng TR90 tính siêu nhẹ, dẻo dai và đàn hồi cực tốt.\r\nTròng kính được làm bằng nhựa với màu gradient sang trọng quý phái.\r\nMắt kính có công nghệ chống tia UV lên đến 400, bảo vệ mắt khỏi ánh sáng mặt trời.', '445.000', 'mat-kinh-thoi-trang-nu-dora-6219-c3-do-1.jpg', 1, NULL, NULL),
-(3, '6198-C4', 1, 'Thương hiệu mắt kính Dora đến từ Việt Nam.', 'Mắt kính thời trang Nữ Dora 6198-C4 thiết kế kính kiểu hình tròn, gọng kính được làm bằng TR90 & Metal tăng thêm độ bền bỉ và sang trọng.\r\nTròng kính được làm bằng nhựa với màu gradient sang trọng quý phái.\r\nMắt kính có công nghệ chống tia UV lên đến 400, bảo vệ mắt khỏi ánh sáng mặt trời.', '640.000', '', 1, NULL, NULL),
-(4, 'Mũ Vành Chống UV', 3, 'Với công nghệ chống tia UV.\r\n-Thiết kế đỉnh bằng phẳng với vành rộng mang lại vẻ ngoài giản dị.\r\n-Có thể điều chỉnh độ vừa vặn theo ý muốn.\r\n-Chúng tôi đã thay thế dải băng dài bằng móc và nút thắt để dễ dàng điều chỉnh độ vừa vặn.', 'VẢI\r\n84% Giấy, 16% Polyeste\r\nKÍCH CỠ\r\nAround the Head: 57cm\r\nHƯỚNG DẪN GIẶT\r\nKhông giặt', '489.000', 'goods_34_447564.jpg', 1, NULL, NULL),
-(5, 'Mũ Rộng Vành Chống UV', 3, '- Một chiếc mũ mềm mại và thoáng khí với một lớp lót 100% cotton và vải linen - cotton pha bên ngoài.\r\n- Công nghệ chống tia UV.\r\n- Màu trơn ở bên ngoài và hoa văn caro gingham ở bên trong.\r\n- Họa tiết caro trên vành mũ thêm điểm nhấn phong cách.\r\n- Vành tròn rộng giúp bảo vệ bạn khỏi tia UV.\r\n- Dây đeo có thể điều chỉnh.\r\n- Một dây định hình cho phép bạn điều chỉnh vành mũ để tạo ra hình dạng bạn muốn.', 'Vải Chính: 53% Lanh, 47% Bông/ Lớp Lót: 100% Bông/ Vải Chính: 53% Lanh, 47% Bông/ Lớp Lót: 100% Bông\r\nKÍCH CỠ\r\nAround the Head: 57cm\r\nHƯỚNG DẪN GIẶT\r\nGiặt tay nước lạnh', '489.000', 'goods_30_447561.jpg', 1, NULL, NULL);
+(2, 'Dora 6219-C3', 1, 'Thương hiệu mắt kính Dora đến từ Việt Nam.', 'Mắt kính thời trang Nữ Dora 6219-C3 thiết kế kính kiểu hình tròn, gọng kính được làm bằng TR90 tính siêu nhẹ, dẻo dai và đàn hồi cực tốt.\r\nTròng kính được làm bằng nhựa với màu gradient sang trọng quý phái.\r\nMắt kính có công nghệ chống tia UV lên đến 400, bảo vệ mắt khỏi ánh sáng mặt trời.', '445.000', 'mat-kinh-thoi-trang-nu-dora-6219-c3-do-1.jpg', 0, NULL, NULL),
+(9, '6198-C4', 3, 'Thương hiệu mắt kính Dora đến từ Việt Nam.', 'Mắt kính thời trang Nữ Dora 6198-C4 thiết kế kính kiểu hình tròn, gọng kính được làm bằng TR90 & Metal tăng thêm độ bền bỉ và sang trọng.\r\nTròng kính được làm bằng nhựa với màu gradient sang trọng quý phái.\r\nMắt kính có công nghệ chống tia UV lên đến 400, bảo vệ mắt khỏi ánh sáng mặt trời.', '640.000', 'mat-kinh-thoi-trang-nu-dora-6198-c4-trang-den-2.jpg', 1, NULL, NULL),
+(5, 'Mũ Rộng Vành Chống UV', 3, '- Một chiếc mũ mềm mại và thoáng khí với một lớp lót 100% cotton và vải linen - cotton pha bên ngoài.\r\n- Công nghệ chống tia UV.\r\n- Màu trơn ở bên ngoài và hoa văn caro gingham ở bên trong.\r\n- Họa tiết caro trên vành mũ thêm điểm nhấn phong cách.\r\n- Vành tròn rộng giúp bảo vệ bạn khỏi tia UV.\r\n- Dây đeo có thể điều chỉnh.\r\n- Một dây định hình cho phép bạn điều chỉnh vành mũ để tạo ra hình dạng bạn muốn.', 'Vải Chính: 53% Lanh, 47% Bông/ Lớp Lót: 100% Bông/ Vải Chính: 53% Lanh, 47% Bông/ Lớp Lót: 100% Bông\r\nKÍCH CỠ\r\nAround the Head: 57cm\r\nHƯỚNG DẪN GIẶT\r\nGiặt tay nước lạnh', '489.000', 'goods_30_447561.jpg', 1, NULL, NULL),
+(8, 'vMũ Vành Chống UV', 3, 'Với công nghệ chống tia UV.\r\n-Thiết kế đỉnh bằng phẳng với vành rộng mang lại vẻ ngoài giản dị.\r\n-Có thể điều chỉnh độ vừa vặn theo ý muốn.\r\n-Chúng tôi đã thay thế dải băng dài bằng móc và nút thắt để dễ dàng điều chỉnh độ vừa vặn.', 'VẢI\r\n84% Giấy, 16% Polyeste\r\nKÍCH CỠ\r\nAround the Head: 57cm\r\nHƯỚNG DẪN GIẶT\r\nKhông giặtằng móc và nút thắt để dễ dàng điều chỉnh độ vừa vặn.', '489.000', 'v1.jpg', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 

@@ -36,6 +36,8 @@ Route::post('admin-dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('add-category-product', [CategoryProduct::class, 'add_category_product'])->name('admin.add_category');
 Route::get('all-category-product', [CategoryProduct::class, 'all_category_product'])->name('admin.all_category');
 Route::post('save-category-product', [CategoryProduct::class, 'save_category_product'])->name('admin.save_category');
+Route::get('/unactive-category-product/{category_id}', [CategoryProduct::class, 'unactive_category_product']);
+Route::get('/active-category-product/{category_id}', [CategoryProduct::class, 'active_category_product']);
 
 //Product
 Route::get('add-product', [ProductController::class, 'add_product'])->name('admin.add_product');

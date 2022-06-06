@@ -7,13 +7,6 @@
         </div>
         <div class="row w3-res-tb">
             <div class="col-sm-5 m-b-xs">
-                <select class="input-sm form-control w-sm inline v-middle">
-                    <option value="0">Bulk action</option>
-                    <option value="1">Delete selected</option>
-                    <option value="2">Bulk edit</option>
-                    <option value="3">Export</option>
-                </select>
-                <button class="btn btn-sm btn-default">Apply</button>
             </div>
             <div class="col-sm-4">
             </div>
@@ -28,6 +21,16 @@
         </div>
         <div class="table-responsive">
             <table class="table table-striped b-t b-light">
+                <?php
+
+                use Illuminate\Support\Facades\Session;
+
+                $messgae =  Session::get('message');
+                if ($messgae) {
+                    echo '<span style="margin-left: 42%;text-align: center;color: red;">' . $messgae . '</span>';
+                    Session::put('message', null);
+                }
+                ?>
                 <thead>
                     <tr>
                         <th style="width:20px;">
@@ -36,22 +39,35 @@
                             </label>
                         </th>
                         <th>Tên danh mục</th>
+                        <th>Mô tả danh mục</th>
                         <th>Hiển thị</th>
                         <th>Ngày thêm</th>
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($all_category_product as $all_category_products)
                     <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                        <td>Idrawfast prototype design prototype design prototype design prototype
-                            design prototype design</td>
-                        <td><span class="text-ellipsis">Ẩn/Hiển thị</span></td>
-                        <td><span class="text-ellipsis">11/11/2000</span></td>
+                        <td>{{$all_category_products->category_name}}</td>
+                        <td>{{$all_category_products->category_desc}}</td>
+                        <td><span class="text-ellipsis">
+                                <?php
+                                if ($all_category_products->category_status == 0) { ?>
+                                    <a href="{{URL::to('/unactive-category-product/' . $all_category_products->category_id)}}"><span style="font-size: 35px;" class="fa-thumb-styling fa fa-thumbs-down"></span></a>
+                                <?php } else {
+                                ?>
+                                    <a href="{{URL::to('/active-category-product/' . $all_category_products->category_id)}}"><span style="font-size: 35px;" class="fa-thumb-styling fa fa-thumbs-up"></span></a>
+                                <?php }
+                                ?>
+                            </span>
+                        </td>
+                        <td><span class="text-ellipsis">{{$all_category_products->created_at}}</span></td>
                         <td>
                             <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

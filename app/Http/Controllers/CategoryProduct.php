@@ -14,7 +14,9 @@ class CategoryProduct extends Controller
         return view('admin.add_category_product');
     }
     public function all_category_product(){
-        return view('admin.all_category_product');
+        $all_category_product = DB::table('tbl_category')->get();
+        $manager_product = view('admin.all_category_product')->with('all_category_product', $all_category_product);
+        return view('admin_layout')->with('admin.all_category_product', $manager_product);
     }
     public function save_category_product(Request $request){
         $data = array();
@@ -25,5 +27,18 @@ class CategoryProduct extends Controller
         DB::table('tbl_category')->insert($data);
         Session::put('message', 'thêm danh mục sản phẩm thành công');
         return redirect::to('add-category-product');
+    }
+
+    public function active_category_product($category_id)
+    {
+        DB::table('tbl_category')->where('category_id', $category_id)->update(['category_status' => 0]);
+        Session::put('message', ' Không hiển thị sản phẩm');
+        return Redirect::to('all-category-product');
+    }
+    public function unactive_category_product($category_id)
+    {
+        DB::table('tbl_category')->where('category_id', $category_id)->update(['category_status' => 1]);
+        Session::put('message', 'hiển thị sản phẩm');
+        return Redirect::to('all-category-product');
     }
 }

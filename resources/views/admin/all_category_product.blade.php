@@ -64,7 +64,7 @@
                         </td>
                         <td><span class="text-ellipsis">{{$all_category_products->created_at}}</span></td>
                         <td>
-                            <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                            <a href="{{URL::to('/edit-category/'. $all_category_products->category_id)}}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
                         </td>
                     </tr>
                     @endforeach

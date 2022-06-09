@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category ;
+use App\Models\Product;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+
 
 session_start();
 
@@ -70,38 +74,37 @@ class ProductController extends Controller
         Session::put('message', 'hiển thị sản phẩm');
         return Redirect::to('all-product');
     }
-  public function update($product_id){
-      $product =  DB::table('tbl_product')->where('product_id', $product_id)->first();
-    //    $cate_product = DB::table('tbl_category')->orderby('category_id', 'desc')->get();
-       $cate_product = DB::table('tbl_product')->join('tbl_category', 'tbl_category.category_id', '=', 'tbl_product.category_id')->get();
-     
-      return view('admin.update_product')->with('cate_product', $cate_product)->with('product',$product );
-    //   return view('admin.update_product',compact($cate_product,$product));
-  }
-public function update_end(Request $request,$id){
-    $data = array();
-    $data['product_name'] = $request->product_name;
-    $data['product_price'] = $request->product_price;
-    $data['product_image'] = $request->product_image;
-    $data['product_content'] = $request->product_content;
-    $data['product_desc'] = $request->product_desc;
-    $data['category_id'] = $request->product_cate;
-    $data['product_status'] = $request->product_status;
 
-    $get_image = $request->file('product_image');
-    if ($get_image) {
-        $get_name_imgae = $get_image->getClientOriginalName();
-        $name_image = current(explode('.', $get_name_imgae));
-        $new_image = $name_image . '.' . $get_image->getClientOriginalExtension();
-        $get_image->move('public/uploads', $new_image);
-        $data['product_image'] = $new_image;
-        DB::table('tbl_product')->update($data);
-        Session::put('message', 'Sửa sản phẩm thành công');
-        return redirect::to('update-product');
+
+    public function update($product_id){
+        $product =  DB::table('tbl_product')->where('product_id', $product_id)->first();
+         $cate_product = DB::table('tbl_product')->join('tbl_category', 'tbl_category.category_id', '=', 'tbl_product.category_id')->get();    
+        return view('admin.update_product')->with('cate_product', $cate_product)->with('product',$product );
     }
-    $data['product_image'] = '';
-    DB::table('tbl_product')->insert($data);
-    Session::put('message', 'Sửa sản phẩm thành công');
-    return redirect::to('update-product');
-}
+  public function update_end(Request $request,$id){
+         $product = Product::find($id);
+        $product ->product_name = $request['product_name'];
+        $product ->product_price = $request['product_price'];
+        $product ->product_content = $request['product_content'];
+        $product ->category_id = $request['category_id'];
+        $product ->product_status = $request['product_status'];
+    
+       $get_image = $request->file('product_image');  
+        if ($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move('public/uploads', $new_image); 
+            $product['product_image'] = $new_image;
+           
+        }
+      
+        $product->save();
+        return redirect::to('all-product');
+       
+      
+  
+     
+  }
+
 }

@@ -54,25 +54,26 @@
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Danh mục sản phẩm</label>
-                            <select name="product_cate" class="form-control input-sm m-bot15">
+                            <select name="category_id" class="form-control input-sm m-bot15">
                                 @foreach($cate_product as $cate_products)
-                                <option value="{{$cate_products->category_id}}">
-                                    {{$cate_products->category_name}}
-                                </option>
+                                <option value="{{$cate_products->category_id}}"
+                                 {{($cate_products->category_id == $product->category_id)? 'selected':''}}>
+                                 {{$cate_products->category_name}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Hiển thị</label>
                             <select name="product_status" class="form-control input-sm m-bot15">
-                             <!-- <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option> -->
-                                <option value="{{$product-> product_status}}">
-                                    {{$product->product_status}}
-                                  
-                                </option>
-                             
-                              
+                          
+                                @if ($product->product_status == 0)
+                                <option value="{{$product-> product_status}}" checked> Ẩn </option>   
+                                <option value="{{$product-> product_status}}"> Hiển Thị  </option>         
+                                @else{
+                                    <option value="{{$product-> product_status}}"checked> Hiển Thị </option>
+                                    <option value="{{$product-> product_status}}"> Ẩn</option>   
+                                }
+                              @endif
                             </select>
                         </div>
                         <button type="submit" name="add_category_product" class="btn btn-info">Update</button>

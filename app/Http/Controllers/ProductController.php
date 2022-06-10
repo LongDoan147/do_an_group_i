@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category ;
-use App\Models\Product;
-use Illuminate\Http\Request;
 
+
+use Illuminate\Http\Request;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;

@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Login;
+use App\Models\Social;
+use Socialite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+
 
 session_start();
 
@@ -39,5 +42,58 @@ class AdminController extends Controller
         Session::put('admin_name', null);
         Session::put('admin_id', null);
         return redirect::to('/admin');
+    }
+    public function login_facebook(){
+        return Socialite::driver('facebook')->redirect();
+       
+        }
+        
+        public function callback_facebook(){
+        $provider = Socialite::driver('facebook')->user();
+        $account = Social::where('provider','facebook')->where('provider_user_id',$provider->getId())->first();
+       
+        if($account){
+        //login in vao trang quan tri
+        $account_name = Login::where('admin_id',$account->user)->first();
+        Session::put('admin_name',$account_name->admin_name);
+        Session::put('admin_id',$account_name->admin_id);
+        return redirect('/dashboard')->with('message','dang nhap admin thanh cong');
+        }else{
+        
+        $hieu = new Social([
+        'provider_user_id' => $provider->getId(),
+        'provider'=>'facebook'
+        ]);
+        
+        $orang = Login::where('admin_email',$provider->getEmail())->first();
+        
+        if(!$orang){
+        $orang = Login::create([
+       'admin_name'=>$provider->getName(),
+       'admin_email'=>$provider->getEmail(),
+       'admin_password'=>'',
+       'admin_phone'=>''
+      
+        ]);
+        }
+        $hieu->login()->associate($orang);
+        $hieu->save();
+        
+        $account_name = Login::where('admin_id',$account->user)->first();
+        
+        Session::put('admin_name',$account_name->admin_name);
+        Session::put('admin_id',$account_name->admin_id);
+        return redirect('/dashboard')->with('message','dang nhap admin thanh cong');
+
+        }
+    }
+    public function AuthLogin(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id){
+            return Redirect::to('dashboard');
+        }
+        else{
+            return Redirect::to('admin')->send();
+        }
     }
 }

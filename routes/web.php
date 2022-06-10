@@ -43,5 +43,6 @@ Route::get('all-product', [ProductController::class, 'all_product'])->name('admi
 Route::post('save-product', [ProductController::class, 'save_product'])->name('admin.save_product');
 Route::get('/unactive-product/{product_id}', [ProductController::class, 'unactive_product']);
 Route::get('/active-product/{product_id}', [ProductController::class, 'active_product']);
-
-
+// login fb
+Route::get('/login-facebook', [AdminController::class, 'login_facebook']);
+Route::get('/admin/callback', [AdminController::class, 'callback_facebook']);

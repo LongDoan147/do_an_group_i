@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------

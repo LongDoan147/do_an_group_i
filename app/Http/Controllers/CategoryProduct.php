@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Category;
 
 session_start();
 
@@ -41,12 +42,20 @@ class CategoryProduct extends Controller
         Session::put('message', 'hiển thị sản phẩm');
         return Redirect::to('all-category-product');
     }
-
-    public function delete_category_product($category_product_id){
-        DB::table('tbl_category')->where('category_id',$category_product_id)->delete();
-        Session::put('message', 'Xóa danh mục sản phẩm thành công');
-        return redirect::to('all-category-product');
-    }
-
-
+   
+  public function edit_category($category_id){
+          $category= Category::all();
+         $category_edit = Category::find($category_id);  
+         return view('admin.edit_category')->with(compact('category_edit','category'));  
+        
+  }
+  public function update_category(Request $request,$category_id){
+   $category = Category::find($category_id);   
+   $category ->category_name = $request['category_name'];   
+   $category ->category_desc = $request['category_desc'];
+   $category ->category_status = $request['category_status'];
+  
+   $category->save();
+   return redirect::to('all-category-product')->with('success','update thanh cong');
+  }
 }

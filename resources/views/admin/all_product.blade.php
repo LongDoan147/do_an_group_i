@@ -74,9 +74,7 @@
                             </span>
                         </td>
                         <td>
-                            <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i></a>
-                            <a onclick="return confirm ('Bạn có chắc chắn muốn xóa')" href="{{URL::to('/delete-product',$all_products->product_id)}}" class="active" ui-toggle-class="">
-                            <i class="fa fa-times text-danger text"></i></a>
+                            <a href="{{ route('product.update',['id' => $all_products->product_id])}}" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
                         </td>
                     </tr>
                     @endforeach
@@ -90,7 +88,15 @@
                     
                 </div>
                 <div class="col-sm-7 text-right text-center-xs">
-                {{$all_product->links()}}
+                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </footer>
     </div>

@@ -36,15 +36,19 @@ Route::post('admin-dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('add-category-product', [CategoryProduct::class, 'add_category_product'])->name('admin.add_category');
 Route::get('all-category-product', [CategoryProduct::class, 'all_category_product'])->name('admin.all_category');
 Route::post('save-category-product', [CategoryProduct::class, 'save_category_product'])->name('admin.save_category');
-Route::get('/unactive-category-product/{category_id}', [CategoryProduct::class, 'unactive_category_product']);
-Route::get('/active-category-product/{category_id}', [CategoryProduct::class, 'active_category_product']);
-Route::get('/edit-category/{category_id}',[CategoryProduct::class, 'edit_category']);
-Route::post('/update-category/{category_id}', [CategoryProduct::class, 'update_category']);
 
+//Product
 Route::get('add-product', [ProductController::class, 'add_product'])->name('admin.add_product');
 Route::get('all-product', [ProductController::class, 'all_product'])->name('admin.all_product');
 Route::post('save-product', [ProductController::class, 'save_product'])->name('admin.save_product');
 Route::get('/unactive-product/{product_id}', [ProductController::class, 'unactive_product']);
 Route::get('/active-product/{product_id}', [ProductController::class, 'active_product']);
-Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
+Route::get('/update/{id}',[
+    'as' => 'product.update',
+    'uses'=> 'ProductController@update'
+]);
 
+Route::post('/update/{id}',[
+    'as' => 'product.update_end',
+    'uses'=> 'ProductController@update_end'
+]);

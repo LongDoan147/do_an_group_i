@@ -1,0 +1,118 @@
+.module7 {
+    position: relative;
+}
+
+.module7 img {
+    width: 100%;
+}
+
+.module7 .container {
+    max-width: 1200px;
+    /* text-align: center; */
+}
+
+/* .top */
+.module7 .top .container .row .item {
+    width: 150px;
+    display: block;
+    padding: 0;
+}
+
+.module7 .top .container .row .item img {
+    height: 150px;
+}
+
+
+.module7 .top .razzi {
+    position: absolute;
+    /* top: 140px;
+    left: 900px; */
+    top: 34%;
+    left: 47%;
+}
+
+.module7 .top .razzi a {
+    padding: 15px 40px;
+    background-color: #FFFFFF;
+    color: #111111;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.module7 .top {
+    padding: 0px 0px 95px 0px;
+}
+
+/* .botom */
+.module7 .bottom {
+    background-image: url(../image/footer_bg_1920.jpg);
+    padding-top: 100px;
+    padding-bottom: 15px;
+    background-size: cover;
+
+}
+
+/* .bottom .infor */
+.bottom .infor{
+    padding-bottom: 50px;
+    font-family: 'Jost', Arial, sans-serif;
+}
+.module7 .bottom .infor .container .razzi {
+    text-decoration: none;
+}
+
+.module7 .bottom .infor .container .item a {
+    color: #cdcdcd;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.5;
+
+}
+
+.module7 .bottom .infor .container .item h6 {
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 1.46154;
+    padding-bottom: 16px;
+    margin: 0;
+    border: none;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.module7 .infor .container .icon i {
+    color: #e8e7e7;
+    margin-right: 10px;
+}
+
+.module7 .bottom .infor .container .razzi h1 {
+    color: #FFFFFF;
+}
+
+.module7 .bottom .infor .container .razzi h6 {
+    color: #FFFFFF;
+}
+
+.module7 .bottom .infor .container .col-md-3 {
+    text-align: left;
+    color: #FFFFFF;
+}
+/* .bottom .visa */
+
+.module7 .bottom .visa{
+    position: relative;
+    max-width: 1200px;
+    display: block;
+}
+.module7 .bottom .visa .left{
+    text-align: left;
+    display: block;
+}
+.module7 .bottom .visa .right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    display: inline-block;
+}

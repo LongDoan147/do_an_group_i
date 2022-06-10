@@ -1,51 +1,91 @@
 
-.module8 .container .boo a{
+.module8{
+    padding: 50px;
+}
+.module8 .container .top .boo a{
     text-decoration: none;
     color: #767676;
     margin-bottom: 5px;
 }
-.module8 .container .boo {
+.module8 .container .top .boo {
     margin-bottom: 5px;
 }
-.module8 .container h1 {
+.module8 .container .top h1 {
     font-size: 28px;
     margin: 0 0 13px;
 }
-.module8 .container .pri {
+.module8 .container .top .pri {
     margin: 0 0 20px;
 }
 
-.module8 .container .price{
+.module8 .container .top .price{
     margin: 0;
     font-size: 24px;
     font-weight: 500;
     margin-right: 16px;
     display: inline-block;
 }
-.module8 .container .stock{
+.module8 .container .top .stock{
     display: inline-block;
 }
-.module8 .container .desi{
+.module8 .container .top .desi{
     margin-top: 10px;
     margin-bottom: 15px;
 }
-.module8 .container .desi p{
+.module8 .container .top .desi p{
 
     margin: 0 0 10px;
 }
-.module8 .container .add {
+.module8 .container .top .add {
     margin-bottom: 15px;
 }
-.module8 .container .add button {
+.module8 .container .top .add button {
     margin-right: 20px;
     font-size: 20px;
     padding: 15px 40px;
 }
-.module8 .container .wish button {
+.module8 .container .top .wish button {
     margin-right: 20px;
     font-size: 20px;
     padding: 15px 40px;
 }
-.module8 .container .cate {
+.module8 .container .top .cate {
     margin-right: 15px;
 }
+
+/* .tab */
+.module8 .bottom .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  /* Style the buttons inside the tab */
+  .module8 .bottom .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .module8 .bottom .tab button:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .module8 .bottom .tab button.active {
+    background-color: #ccc;
+  }
+
+  /* Style the tab content */
+  .module8 .bottom .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }

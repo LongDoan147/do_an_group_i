@@ -10,13 +10,31 @@
     <link rel="stylesheet" href="{{asset('css/module7.css')}}">
     <link rel="stylesheet" href="{{asset('css/module8.css')}}">
     <script src="https://kit.fontawesome.com/72db99a8b6.js" crossorigin="anonymous"></script>
+
     <title>Document</title>
 </head>
 
 <body>
     <x-layout></x-layout>
-    <x-module8></x-module8>
+    @yield('module8')
+
     <x-module7></x-module7>
 </body>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 </html>

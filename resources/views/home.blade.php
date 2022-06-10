@@ -20,14 +20,12 @@
 <body>
     <x-layout></x-layout>
     <x-module1></x-module1>
-    <x-module2></x-module2>
+    @yield('module2')
     <x-module3></x-module3>
     <x-module4></x-module4>
     <x-module5></x-module5>
-    <x-module7_pl>
-        </x-module7>
-        <x-module7></x-module7>
-
+    <x-module7_pl></x-module7_pl>
+    <x-module7></x-module7>
 </body>
 
 </html>

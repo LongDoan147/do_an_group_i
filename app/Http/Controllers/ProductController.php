@@ -12,9 +12,12 @@ session_start();
 class ProductController extends Controller
 {
 
-    public function detail_product()
+    public function detail_product($product_id)
     {
-        return view('detail_product');
+        $cate_product = DB::table('tbl_category')->orderby('category_id', 'desc')->get();
+        $details_product = DB::table('tbl_product')->join('tbl_category', 'tbl_category.category_id', '=', 'tbl_product.category_id')->where('tbl_product.product_id', $product_id)->get();
+        $manager_product = view('components.module8')->with('details_product', $details_product);
+        return view('detail_product')->with('cate_product', $cate_product)->with('components.module8', $manager_product);
     }
 
     public function add_product()

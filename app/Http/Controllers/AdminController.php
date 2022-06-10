@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
-
+use Socialite;
 session_start();
 
 class AdminController extends Controller
@@ -50,4 +50,6 @@ class AdminController extends Controller
         Session::put('admin_id', null);
         return redirect::to('/admin');
     }
+
+
 }

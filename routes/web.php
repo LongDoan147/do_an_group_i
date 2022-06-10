@@ -52,3 +52,5 @@ Route::post('/update/{id}',[
     'as' => 'product.update_end',
     'uses'=> 'ProductController@update_end'
 ]);
+Route::get('login/github', [LoginController::class],'redirectToProvider');
+Route::get('login/github/callback',[LoginController::class],'handleProviderCallback');

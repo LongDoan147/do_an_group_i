@@ -21,6 +21,6 @@
             </div>
             </div>
         </div>
-       <img src="https://demo4.drfuri.com/razzi/wp-content/uploads/sites/14/2020/12/home5-video.mp4"" alt="">
+      
     </div>
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Login;
 use App\Models\Social;
 use Socialite;

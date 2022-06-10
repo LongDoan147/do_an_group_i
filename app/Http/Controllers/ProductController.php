@@ -70,4 +70,10 @@ class ProductController extends Controller
         Session::put('message', 'hiển thị sản phẩm');
         return Redirect::to('all-product');
     }
+
+    public function delete_product($product_id){
+        DB::table('tbl_product')->where('product_id',$product_id)->delete();
+        Session::put('message', 'Xóa sản phẩm thành công');
+        return redirect::to('all-product');
+    }
 }

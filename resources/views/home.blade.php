@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/module2.css')}}">
     <link rel="stylesheet" href="{{asset('css/module7.css')}}">
     <link rel="stylesheet" href="{{asset('css/module4.css')}}">
+    <link rel="stylesheet" href="{{asset('css/module5.css')}}">
     <script src="https://kit.fontawesome.com/72db99a8b6.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>

@@ -55,10 +55,22 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Danh mục sản phẩm</label>
                             <select name="category_id" class="form-control input-sm m-bot15">
-                                @foreach($cate_product as $cate_products)
+                                <!-- @foreach($cate_product as $cate_products)
                                 <option value="{{$cate_products->category_id}}"
                                  {{($cate_products->category_id == $product->category_id)? 'selected':''}}>
                                  {{$cate_products->category_name}}</option>
+                                @endforeach -->
+                                @foreach($cate_product as $cate_products)
+                                @if($cate_products->category_id == $product->category_id)
+                                <option selected value="{{$cate_products->category_id}}">
+                                {{$cate_products->category_name}}
+                                </option>
+                                 @else
+                                    <option value="{{$cate_products->category_id}}" >
+                                    {{$cate_products->category_name}}                             
+                                    </option>  
+                                                               
+                                @endif
                                 @endforeach
                             </select>
                         </div>

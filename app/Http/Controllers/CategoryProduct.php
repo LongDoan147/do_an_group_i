@@ -54,6 +54,7 @@ class CategoryProduct extends Controller
    $category ->category_name = $request['category_name'];   
    $category ->category_desc = $request['category_desc'];
    $category ->category_status = $request['category_status'];
+  
    $category->save();
    return redirect::to('all-category-product')->with('success','update thanh cong');
   }

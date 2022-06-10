@@ -10,7 +10,8 @@
     .img_ab
     {
         position:absolute;
-        
+        top: 0px;
+        left: 0px;
     }
     .module-5{
         padding-top: 200px;

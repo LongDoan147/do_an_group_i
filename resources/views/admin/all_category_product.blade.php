@@ -65,9 +65,9 @@
                         <td><span class="text-ellipsis">{{$all_category_products->created_at}}</span></td>
                         <td>
                             <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i></a>
-                            <a onclick="return confirm ('Bạn có chắc chắn muốn xóa')" href="{{URL::to('/delete-category-product',$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                            <a onclick="return confirm ('Bạn có chắc chắn muốn xóa')" href="{{URL::to('/delete-category-product',$all_category_products->category_id)}}" class="active" ui-toggle-class="">
                             <i class="fa fa-times text-danger text"></i></a>		
-	
+
                         </td>
                     </tr>
                     @endforeach

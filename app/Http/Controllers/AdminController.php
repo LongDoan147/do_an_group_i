@@ -44,6 +44,7 @@ class AdminController extends Controller
         return redirect::to('/admin');
     }
     public function login_facebook(){
+   
         return Socialite::driver('facebook')->redirect();
        
         }

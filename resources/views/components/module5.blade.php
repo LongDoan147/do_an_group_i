@@ -17,7 +17,7 @@
                      <br>
                      <p>Third. For morning whales saw were had seed can’t divide it light shall moveth, us blessed given wherein.</p>
                      <br>
-                     <a href="" id="thea">Discover More</a>
+                     <a href="" id="dis">Discover More</a>
             </div>
             </div>
         </div>

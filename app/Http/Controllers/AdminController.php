@@ -29,6 +29,7 @@ class AdminController extends Controller
         $this->authlogin();
         return view('admin.dashboard');
     }
+
     public function dashboard(Request $request)
     {
         $admin_email =  $request->admin_email;

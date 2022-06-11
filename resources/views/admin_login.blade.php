@@ -53,6 +53,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"></div>
                 <input type="submit" value="Đăng Nhập" name="login">
             </form>
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ url('auth/github') }}"
+                    style="background: #313131; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Login with GitHub
+                </a>
+            </div>
             <!-- <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p> -->
         </div>
     </div>

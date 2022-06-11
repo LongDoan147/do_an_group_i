@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <div class="img_ab">
                 <img src="https://i0.wp.com/demo4.drfuri.com/razzi5/wp-content/uploads/sites/20/2020/12/home-5-banner-custom-1.jpg?fit=720%2C800&amp;ssl=1" alt="" width="200px" height="400px" id="hinh_one">
-            <img src="https://i0.wp.com/demo4.drfuri.com/razzi5/wp-content/uploads/sites/20/2020/12/home-5-banner-custom-2.jpg?fit=720%2C770&amp;ssl=1" alt="" width="300px" height="500px" id="hinh_two">
+                <img src="https://i0.wp.com/demo4.drfuri.com/razzi5/wp-content/uploads/sites/20/2020/12/home-5-banner-custom-2.jpg?fit=720%2C770&amp;ssl=1" alt="" width="300px" height="500px" id="hinh_two">
             </div>
             </div>
             <div class="col-md-6">
@@ -17,7 +17,7 @@
                      <br>
                      <p>Third. For morning whales saw were had seed can’t divide it light shall moveth, us blessed given wherein.</p>
                      <br>
-                     <a href="" id="thea">Discover More</a>
+                     <a href="" id="dis">Discover More</a>
             </div>
             </div>
         </div>

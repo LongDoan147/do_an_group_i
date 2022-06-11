@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Trang quản lý Admin</title>
+    <title>Trang Đăng Nhập</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -52,6 +52,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h6><a href="#">Quên mật khẩu</a></h6>
                 <div class="clearfix"></div>
                 <input type="submit" value="Đăng Nhập" name="login">
+                <p>
+                    <a href="#"><button class="loginwith" style="background: #0079ce;">Login With Facbook</button></a>
+                </p>
+
+                <p>
+                    <a href="#"><button class="loginwith" style="background: #1bb2e9;">Login With Twitter</button></a>
+                </p>
+
+                <p>
+                    <a href="#"><button class="loginwith" style="background: #dc4e41;">Login With Google</button></a>
+                </p>
+
+                <p>
+                    <a href="#"><button class="loginwith" style="background: #5a5656;">Login With GitHub</button></a>
+                </p>
+
             </form>
             <!-- <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p> -->
         </div>

@@ -256,6 +256,18 @@ ul.sidebar-menu li a.active i {
 }
 
 /*main content*/
+.loginwith{
+	
+	border: none;
+	border-radius: 0px 3px 3px 0px;
+	color: #f4f4f4;
+	cursor: pointer;
+	height: 36px;
+	text-transform: uppercase;
+	width: 70%;
+    margin-bottom: 7%;
+    
+}
 #main-content {
     margin-left: 240px;
     -webkit-transition: all .3s ease-in-out;

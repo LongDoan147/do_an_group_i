@@ -61,7 +61,7 @@
                         <td>{{$all_products->product_name}}</td>
                         <td>{{$all_products->product_price}}</td>
                         <td><img src="public/uploads/{{$all_products->product_image}}" alt="" height="100" width="100"></td>
-                        <td>{{$all_products->category_id}}</td>
+                        <td>{{$all_products->category_name}}</td>
                         <td><span class="text-ellipsis">
                                 <?php
                                 if ($all_products->product_status == 0) { ?>

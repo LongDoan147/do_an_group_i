@@ -1,4 +1,4 @@
-<div class="module5">
+<div class="module-5">
     <div class="container">
         <div class="row">
             <div class="col-md-6">

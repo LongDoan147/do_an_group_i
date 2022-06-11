@@ -23,16 +23,8 @@ class User extends Authenticatable
         'password',
         'phone',
         'mssv',
-    ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
+        'github_id',
+        'auth_type',
     ];
 
     /**
@@ -43,4 +35,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
 }

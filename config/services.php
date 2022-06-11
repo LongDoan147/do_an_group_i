@@ -29,5 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'github' => [
+        'client_id' => '227317513dc919bffdff',
+        'client_secret' => '7e2ef208ef7739cf93e6244b23272268009592bc',
+        'redirect' => 'http://127.0.0.1:8000/auth/github/callback',
+    ],
 ];
